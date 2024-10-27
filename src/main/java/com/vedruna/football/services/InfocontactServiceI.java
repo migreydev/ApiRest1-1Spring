@@ -1,5 +1,10 @@
 package com.vedruna.football.services;
 
-public interface InfocontactServiceI {
+import java.util.List;
 
+import com.vedruna.football.persistance.models.Student;
+
+public interface InfocontactServiceI {
+	
+	
 }
