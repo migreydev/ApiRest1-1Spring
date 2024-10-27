@@ -1,5 +1,10 @@
 package com.vedruna.football.services;
 
-public interface InfocontactServiceI {
+import com.vedruna.football.dto.InfocontactDTO;
 
+public interface InfocontactServiceI {
+	
+	InfocontactDTO getInfocontactOfStudent(int id);
+	
+	
 }
