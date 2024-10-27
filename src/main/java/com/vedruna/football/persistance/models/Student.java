@@ -1,5 +1,7 @@
 package com.vedruna.football.persistance.models;
 
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,7 +29,10 @@ public class Student {
 	@Column(name="apellidos")
 	private String surname;
 	
-	@OneToOne(mappedBy = "student")
+	@OneToOne(mappedBy = "student", cascade = CascadeType.REMOVE)
     private Infocontact infocontact;
+	
+	
+	
 
 }

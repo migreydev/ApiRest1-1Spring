@@ -71,4 +71,16 @@ public class StudentServiceImpI implements StudentServiceI{
 		return student;
 	}
 
+	@Override
+	public void deleteStudent(Student student) {
+		studentRepository.delete(student);
+		
+	}
+
+	@Override
+	public Student getNameStudent(String name) {
+		Student student = studentRepository.findByName(name);
+		return student;
+	}
+
 }
