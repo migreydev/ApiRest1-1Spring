@@ -64,4 +64,11 @@ public class StudentServiceImpI implements StudentServiceI{
         	
 	}
 
+	@Override
+	public StudentWithOutInfo getStudentByName(String name) {
+		StudentWithOutInfo student = new StudentWithOutInfo(studentRepository.findByName(name));
+		
+		return student;
+	}
+
 }

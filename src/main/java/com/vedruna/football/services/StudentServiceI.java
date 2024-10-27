@@ -8,6 +8,7 @@ import com.vedruna.football.dto.StudentWithOutInfo;
 public interface StudentServiceI {
 	
 	List<StudentWithOutInfo> getAllStudents();
+	StudentWithOutInfo getStudentByName(String name);
 	void addStudent(StudentDTO student);
 
 
