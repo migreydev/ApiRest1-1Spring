@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.vedruna.football.dto.StudentDTO;
-import com.vedruna.football.dto.StudentWithOutInfo;
+import com.vedruna.football.dto.StudentWithOutInfoDTO;
 import com.vedruna.football.persistance.models.Infocontact;
 import com.vedruna.football.persistance.models.Student;
 import com.vedruna.football.persistance.repository.InfocontactRepository;
@@ -23,13 +23,13 @@ public class StudentServiceImpI implements StudentServiceI{
 	InfocontactRepository infocontactRepository;
 
 	@Override
-	public List<StudentWithOutInfo> getAllStudents() {
+	public List<StudentWithOutInfoDTO> getAllStudents() {
 		
 		List<Student> students = studentRepository.findAll();
-		List<StudentWithOutInfo> studentsDTO = new ArrayList<>();
+		List<StudentWithOutInfoDTO> studentsDTO = new ArrayList<>();
 		
 		for(Student newStudent : students) {
-			StudentWithOutInfo studentDTO = new StudentWithOutInfo();
+			StudentWithOutInfoDTO studentDTO = new StudentWithOutInfoDTO();
 			 
 		     studentDTO.setIdalumno(newStudent.getIdalumno());
 		     studentDTO.setName(newStudent.getName());
@@ -65,8 +65,8 @@ public class StudentServiceImpI implements StudentServiceI{
 	}
 
 	@Override
-	public StudentWithOutInfo getStudentByName(String name) {
-		StudentWithOutInfo student = new StudentWithOutInfo(studentRepository.findByName(name));
+	public StudentWithOutInfoDTO getStudentByName(String name) {
+		StudentWithOutInfoDTO student = new StudentWithOutInfoDTO(studentRepository.findByName(name));
 		
 		return student;
 	}

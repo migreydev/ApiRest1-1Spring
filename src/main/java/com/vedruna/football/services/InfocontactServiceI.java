@@ -1,10 +1,10 @@
 package com.vedruna.football.services;
 
-import java.util.List;
-
-import com.vedruna.football.persistance.models.Student;
+import com.vedruna.football.dto.InfocontactDTO;
 
 public interface InfocontactServiceI {
+	
+	InfocontactDTO getInfocontactOfStudent(int id);
 	
 	
 }

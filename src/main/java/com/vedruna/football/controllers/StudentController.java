@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vedruna.football.dto.StudentDTO;
-import com.vedruna.football.dto.StudentWithOutInfo;
+import com.vedruna.football.dto.StudentWithOutInfoDTO;
 import com.vedruna.football.services.StudentServiceImpI;
 
 @RestController
@@ -22,12 +22,12 @@ public class StudentController {
 	StudentServiceImpI studentService;
 	
 	@GetMapping()
-	public List<StudentWithOutInfo> getAllStudents(){
+	public List<StudentWithOutInfoDTO> getAllStudents(){
 		return studentService.getAllStudents();
 	}
 	
-	@GetMapping("{name}")
-	public StudentWithOutInfo getStudentByName(@PathVariable String name) {
+	@GetMapping("/{name}")
+	public StudentWithOutInfoDTO getStudentByName(@PathVariable String name) {
 		return studentService.getStudentByName(name);
 		
 	}
